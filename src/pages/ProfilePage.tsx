@@ -14,17 +14,17 @@ const ProfilePage: React.FC = () => {
   const profiles: Record<string, Profile[]> = {
     pimpinan: [
       {
-        name: 'Dr. H. Ahmad Suriadi, S.Pd., M.Pd.',
+        name: 'Hardi, S.Pd., M.Pd. ',
         title: 'Kepala Dinas Pendidikan',
         subtitle: 'Kota Palu',
-        image: 'https://source.unsplash.com/random/400x500?portrait,man,formal&sig=1',
+        image: 'https://mediacentral.info/wp-content/uploads/2022/02/IMG-20220225-WA0019.jpg',
         description: 'Bertanggung jawab atas perencanaan, pengorganisasian, dan pengawasan seluruh kegiatan pendidikan di Kota Palu.'
       },
       {
-        name: 'Dra. Hj. Nurhaeda, M.Pd.',
+        name: 'Evi Oktavia, S.T., M.M.',
         title: 'Sekretaris Dinas Pendidikan',
         subtitle: 'Kota Palu',
-        image: 'https://source.unsplash.com/random/400x500?portrait,woman,formal&sig=2',
+        image: '/images/sekretaris.JPG',
         description: 'Mengelola administrasi, keuangan, dan koordinasi antar bidang di Dinas Pendidikan Kota Palu.'
       }
     ],
@@ -49,9 +49,7 @@ const ProfilePage: React.FC = () => {
         subtitle: 'Sekolah Menengah Pertama',
         image: 'https://source.unsplash.com/random/400x500?portrait,man,formal&sig=5',
         description: 'Bertanggung jawab atas pengembangan pendidikan tingkat menengah pertama di Kota Palu.'
-      }
-    ],
-    pendukung: [
+      },
       {
         name: 'Drs. H. Ismail, M.Si.',
         title: 'Kepala Bidang Ketenagaan',
@@ -66,13 +64,12 @@ const ProfilePage: React.FC = () => {
         image: 'https://source.unsplash.com/random/400x500?portrait,woman,formal&sig=7',
         description: 'Mengembangkan dan melestarikan nilai-nilai budaya dalam pendidikan.'
       }
-    ]
+    ],
   };
 
   const tabs = [
-    { id: 'pimpinan', label: 'Pimpinan' },
+    { id: 'pimpinan', label: 'Dinas' },
     { id: 'bidang', label: 'Bidang' },
-    { id: 'pendukung', label: 'Pendukung' }
   ];
 
   const bidangInfo = {
@@ -116,14 +113,14 @@ const ProfilePage: React.FC = () => {
 
           {/* Tentang Bidang Section */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Tentang Bidang</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Tentang Bidang</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto text-center">
               {bidangInfo[activeTab as keyof typeof bidangInfo]}
             </p>
           </div>
 
           {/* Profile Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {profiles[activeTab].map((profile, index) => (
               <div
                 key={index}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X } from 'lucide-react';
 import ProfilePage from './pages/ProfilePage.tsx';
+import BrandIdentityPage from './pages/BrandIdentityPage.tsx';
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -55,8 +56,12 @@ function App() {
   };
 
   const handleMenuClick = (menu: string, item: string) => {
-    if (menu === 'profil' && item === 'Profil') {
-      setCurrentPage('profile');
+    if (menu === 'profil') {
+      if (item === 'Profil') {
+        setCurrentPage('profile');
+      } else if (item === 'Brand Identity') {
+        setCurrentPage('brand-identity');
+      }
     }
     setActiveDropdown(null);
   };
@@ -65,6 +70,8 @@ function App() {
     switch (currentPage) {
       case 'profile':
         return <ProfilePage />;
+      case 'brand-identity':
+        return <BrandIdentityPage />;
       default:
         return (
           <>
@@ -150,7 +157,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="/" className="flex items-center space-x-2" onClick={() => setCurrentPage('home')}>
-              <School className="w-8 h-8 text-blue-600" />
+              <img src="/images/logo.png" alt="Logo" className="w-8 h-8" />
               <span className="font-bold text-xl">Dinas Pendidikan</span>
             </a>
             <div className="flex space-x-4">
