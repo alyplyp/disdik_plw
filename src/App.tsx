@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X } from 'lucide-react';
 import ProfilePage from './pages/ProfilePage.tsx';
 import BrandIdentityPage from './pages/BrandIdentityPage.tsx';
+import SejarahPage from './pages/SejarahPage.tsx';
+import BeritaPage from './pages/BeritaPage.tsx';
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -61,6 +63,13 @@ function App() {
         setCurrentPage('profile');
       } else if (item === 'Brand Identity') {
         setCurrentPage('brand-identity');
+      } else if (item === 'Sejarah') {
+        setCurrentPage('sejarah');
+      }
+    } 
+    else if (menu === 'publikasi') {
+      if (item === 'Berita Artikel') {
+        setCurrentPage('berita');
       }
     }
     setActiveDropdown(null);
@@ -72,6 +81,10 @@ function App() {
         return <ProfilePage />;
       case 'brand-identity':
         return <BrandIdentityPage />;
+      case 'sejarah' :
+        return <SejarahPage/>;
+      case 'berita':
+        return <BeritaPage />;
       default:
         return (
           <>
