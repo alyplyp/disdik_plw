@@ -1,21 +1,33 @@
 import React, { useState } from 'react';
-import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X } from 'lucide-react';
+import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X, Star } from 'lucide-react';
 import ProfilePage from './pages/ProfilePage.tsx';
 import BrandIdentityPage from './pages/BrandIdentityPage.tsx';
 import SejarahPage from './pages/SejarahPage.tsx';
 import BeritaPage from './pages/BeritaPage.tsx';
+import KepegawaianPage from './pages/LayananKepegawaianPage.tsx';
+import PerencanaanPage from './pages/LayananPerencanaanPage.tsx';
+import KetenagaanPage from './pages/LayananKetenagaanPage.tsx';
+import KebudayaanPage from './pages/LayananKebudayaanPage.tsx';
+import PaudPage from './pages/LayananPaudPage.tsx';
+import SdPage from './pages/LayananSDPage.tsx';
+import SmpPage from './pages/LayananSMPPage.tsx';
+import SubSekretariatPage from './pages/LayananSubSekretariatPage.tsx';
+import AsetKeuanganPage from './pages/LayananAsetKeuanganPage.tsx';
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState('home');
 
   const services = [
-    { title: 'Aset dan Keuangan', icon: <Building2 className="w-12 h-12" /> },
-    { title: 'Perencanaan', icon: <BookOpen className="w-12 h-12" /> },
-    { title: 'Kepegawaian', icon: <Users className="w-12 h-12" /> },
     { title: 'PAUD', icon: <School className="w-12 h-12" /> },
     { title: 'SD', icon: <School className="w-12 h-12" /> },
-    { title: 'SMP', icon: <GraduationCap className="w-12 h-12" /> },
+    { title: 'SMP', icon: <School className="w-12 h-12" /> },
+    { title: 'Ketenagaan', icon: <Users className="w-12 h-12" /> },
+    { title: 'Kepegawaian', icon: <Users className="w-12 h-12" /> },
+    { title: 'Kebudayaan', icon: <Star className="w-12 h-12" /> },
+    { title: 'Perencanaan', icon: <BookOpen className="w-12 h-12" /> },
+    { title: 'Sub Sekretariat', icon: <Building2 className="w-12 h-12" /> },
+    { title: 'Aset dan Keuangan', icon: <Building2 className="w-12 h-12" /> },
   ];
 
   const news = [
@@ -47,8 +59,11 @@ function App() {
       'Bidang SD',
       'Bidang SMP',
       'Bidang Ketenagaan',
+      'Bidang Kepegawaian',
       'Bidang Kebudayaan',
-      'Bidang Sub Sekretariat'
+      'Bidang Perencanaan',
+      'Bidang Sub Sekretariat',
+      'Aset dan Keuangan'
     ],
     publikasi: [
       'Berita Artikel',
@@ -72,6 +87,27 @@ function App() {
         setCurrentPage('berita');
       }
     }
+    else if (menu === 'layanan') {
+      if (item === 'Bidang PAUD') {
+        setCurrentPage('paud');
+      } else if (item === 'Bidang SD') {
+        setCurrentPage('sd');
+      } else if (item === 'Bidang SMP') {
+        setCurrentPage('smp');
+      } else if (item === 'Bidang Ketenagaan') {
+        setCurrentPage('ketenagaan');
+      } else if (item === 'Bidang Kepegawaian') {
+        setCurrentPage('kepegawaian');
+      } else if (item === 'Bidang Kebudayaan') {
+        setCurrentPage('kebudayaan');
+      } else if (item === 'Bidang Perencanaan') {
+        setCurrentPage('perencanaan');
+      } else if (item === 'Bidang Sub Sekretariat') {
+        setCurrentPage('sub-sekretariat');
+      } else if (item === 'Aset dan Keuangan') {
+        setCurrentPage('aset-dan-keuangan');
+      }
+    }
     setActiveDropdown(null);
   };
 
@@ -85,6 +121,24 @@ function App() {
         return <SejarahPage/>;
       case 'berita':
         return <BeritaPage />;
+      case 'kepegawaian':
+        return <KepegawaianPage />;
+      case 'ketenagaan':
+        return <KetenagaanPage />;
+      case 'kebudayaan':
+        return <KebudayaanPage />;
+      case 'perencanaan':
+        return <PerencanaanPage />;
+      case 'paud':
+        return <PaudPage />;
+      case 'sd':
+        return <SdPage />;
+      case 'smp':
+        return <SmpPage />;
+      case 'sub-sekretariat':
+        return <SubSekretariatPage />;
+      case 'aset-dan-keuangan':
+        return <AsetKeuanganPage />;
       default:
         return (
           <>
@@ -141,7 +195,7 @@ function App() {
               </div>
             </div>
 
-            {/* Services Section */}
+            {/* Layanan Section */}
             <div className="py-16 bg-gray-50">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Layanan</h2>
@@ -150,6 +204,27 @@ function App() {
                     <button
                       key={index}
                       className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition"
+                      onClick={() => {
+                        if (service.title === 'Kepegawaian') {
+                          setCurrentPage('kepegawaian');
+                        } else if (service.title === 'Perencanaan') {
+                          setCurrentPage('perencanaan');
+                        } else if (service.title === 'Ketenagaan') {
+                          setCurrentPage('ketenagaan');
+                        } else if (service.title === 'Kebudayaan') {
+                          setCurrentPage('kebudayaan');
+                        } else if (service.title === 'PAUD') {
+                          setCurrentPage('paud');
+                        } else if (service.title === 'SD') {
+                          setCurrentPage('sd');
+                        } else if (service.title === 'SMP') {
+                          setCurrentPage('smp');
+                        } else if (service.title === 'Sub Sekretariat') {
+                          setCurrentPage('sub-sekretariat');
+                        } else if (service.title === 'Aset dan Keuangan') {
+                          setCurrentPage('aset-dan-keuangan');
+                        }
+                      }}
                     >
                       <div className="text-blue-600">{service.icon}</div>
                       <span className="text-xl font-semibold">{service.title}</span>
