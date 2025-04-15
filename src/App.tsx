@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X } from 'lucide-react';
-import ProfilePage from './pages/ProfilePage.tsx';
-import BrandIdentityPage from './pages/BrandIdentityPage.tsx';
+import {
+  Search, School, BookOpen, Users, Building2, GraduationCap,
+  Facebook, Instagram, X
+} from 'lucide-react';
+import ProfilePage from './pages/ProfilePage';
+import BrandIdentityPage from './pages/BrandIdentityPage';
+import KalenderPage from './pages/KalenderPage';
+import DokumentasiPage from './pages/DokumentasiPage';
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -35,24 +40,12 @@ function App() {
   ];
 
   const dropdownMenus = {
-    profil: [
-      'Profil',
-      'Brand Identity',
-      'Sejarah'
-    ],
+    profil: ['Profil', 'Brand Identity', 'Sejarah'],
     layanan: [
-      'Bidang PAUD',
-      'Bidang SD',
-      'Bidang SMP',
-      'Bidang Ketenagaan',
-      'Bidang Kebudayaan',
-      'Bidang Sub Sekretariat'
+      'Bidang PAUD', 'Bidang SD', 'Bidang SMP',
+      'Bidang Ketenagaan', 'Bidang Kebudayaan', 'Bidang Sub Sekretariat'
     ],
-    publikasi: [
-      'Berita Artikel',
-      'Kalender Pendidikan',
-      'Dokumentasi'
-    ]
+    publikasi: ['Berita Artikel', 'Kalender Pendidikan', 'Dokumentasi']
   };
 
   const handleMenuClick = (menu: string, item: string) => {
@@ -61,6 +54,14 @@ function App() {
         setCurrentPage('profile');
       } else if (item === 'Brand Identity') {
         setCurrentPage('brand-identity');
+      } else if (item === 'Sejarah') {
+        setCurrentPage('blank');
+      }
+    } else if (menu === 'publikasi') {
+      if (item === 'Kalender Pendidikan') {
+        setCurrentPage('education-calendar');
+      } else if (item === 'Dokumentasi') {
+        setCurrentPage('blank');
       }
     }
     setActiveDropdown(null);
@@ -72,6 +73,10 @@ function App() {
         return <ProfilePage />;
       case 'brand-identity':
         return <BrandIdentityPage />;
+      case 'education-calendar':
+        return <KalenderPage />;
+      case 'blank':
+        return <DokumentasiPage />;
       default:
         return (
           <>
@@ -111,7 +116,7 @@ function App() {
               </div>
             </div>
 
-            {/* Image Carousel Section */}
+            {/* Carousel Section */}
             <div className="py-16">
               <div className="container mx-auto px-4">
                 <div className="flex gap-6 overflow-x-auto pb-4">
@@ -156,7 +161,7 @@ function App() {
       <nav className="bg-white shadow-lg fixed w-full z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <a href="/" className="flex items-center space-x-2" onClick={() => setCurrentPage('home')}>
+            <a href="#" className="flex items-center space-x-2" onClick={() => setCurrentPage('home')}>
               <img src="/images/logo.png" alt="Logo" className="w-8 h-8" />
               <span className="font-bold text-xl">Dinas Pendidikan</span>
             </a>
