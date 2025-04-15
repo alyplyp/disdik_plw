@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, School, BookOpen, Users, Building2, GraduationCap, Facebook, Instagram, X } from 'lucide-react';
 import ProfilePage from './pages/ProfilePage.tsx';
 import BrandIdentityPage from './pages/BrandIdentityPage.tsx';
+// ###ftffttf#
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -115,15 +116,29 @@ function App() {
             <div className="py-16">
               <div className="container mx-auto px-4">
                 <div className="flex gap-6 overflow-x-auto pb-4">
-                  {[1, 2, 3].map((item) => (
-                    <div key={item} className="min-w-[400px] h-[300px] rounded-lg overflow-hidden">
-                      <img
-                        src={`https://source.unsplash.com/random/800x600?education,school&sig=${item}`}
-                        alt={`Education ${item}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
+                  {Object.entries(import.meta.glob('/public/carousel/*.{jpg,jpeg,png,JPG,JPEG,PNG}', { eager: true, as: 'url' }))
+                    .map(([path, url]) => ({
+                      path,
+                      url,
+                      name: path.split('/').pop() || '',
+                      // Get modification time from file name (assuming format DSC01595-min.JPG where numbers indicate date)
+                      date: parseInt(path.match(/\d+/)?.[0] || '0')
+                    }))
+                    .sort((a, b) => b.date - a.date) // Sort by date descending (newest first)
+                    .map(({ url, name }) => (
+                      <div key={name} className="min-w-[400px] h-[300px] rounded-lg overflow-hidden">
+                        <img
+                          src={url}
+                          alt={`Education ${name}`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder.jpg';
+                          }}
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
