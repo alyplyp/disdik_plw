@@ -24,47 +24,44 @@ function SejarahPage() {
             </div>
         </div>
 
-        {/* Konten Sejarah dengan Grid Layout */}
-        <div className="container mx-auto px-4 py-16">
-            <div className="grid md:grid-cols-3 gap-8 items-start">
-            {/* Bagian Gambar di Kiri */}
-            <div className="md:col-span-1 space-y-4">
-                <img
-                src="/images/sejarah-1.jpg"
-                alt="Gedung lama Dinas Pendidikan"
-                className="w-full h-auto rounded-lg shadow-lg"
-                />
-                <img
-                src="/images/sejarah-2.jpg"
-                alt="Kegiatan awal Dinas Pendidikan"
-                className="w-full h-auto rounded-lg shadow-lg"
-                />
-            </div>
+          {/* Sejarah Content Section with Grid Layout */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-8 items-start">
+          {/* Left Images */}
+          <div className="md:col-span-1 space-y-4">
+            <img
+              src="public\images\DSC01569-min.JPG"
+              alt="Gedung lama Dinas Pendidikan"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+            <img
+              src="public\images\DSC01569-min.JPG"
+              alt="Kegiatan awal Dinas Pendidikan"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+            {/* Gambar tambahan untuk mengisi bagian kosong */}
+            <img
+              src="/images/sejarah-3.jpg"
+              alt="Dokumen atau arsip sejarah Dinas Pendidikan"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
 
-            {/* Teks Sejarah di Kanan */}
-            <div className="md:col-span-2 text-lg text-gray-700 space-y-4">
-                <p>
-                Dinas Pendidikan Kota Palu berdiri sejak awal terbentuknya pemerintahan kota sebagai
-                upaya untuk mengelola dan mengembangkan sektor pendidikan secara mandiri. Pada awalnya,
-                Dinas Pendidikan hanya memiliki beberapa staf dan ruang kerja terbatas di lingkungan kantor wali kota.
-                </p>
-                <p>
-                Seiring berjalannya waktu, kebutuhan akan pengelolaan pendidikan yang lebih kompleks mendorong
-                pembentukan struktur organisasi yang lebih lengkap dan profesional. Dinas ini mulai mengembangkan
-                program-program pendidikan dasar dan menengah serta meningkatkan kualitas guru melalui berbagai pelatihan.
-                </p>
-                <p>
-                Di awal tahun 2000-an, Dinas Pendidikan mulai memanfaatkan teknologi informasi untuk mendukung
-                administrasi dan pengawasan sekolah-sekolah di bawah naungannya. Beberapa inisiatif seperti e-learning
-                dan manajemen data sekolah mulai diterapkan.
-                </p>
-                <p>
-                Hingga kini, Dinas Pendidikan Kota Palu terus bertransformasi dengan visi meningkatkan kualitas
-                pendidikan yang inklusif, adil, dan berdaya saing. Berbagai penghargaan dan pencapaian telah diraih,
-                termasuk dalam hal inovasi pembelajaran, peningkatan mutu pendidikan, serta keberhasilan program pendidikan
-                karakter di sekolah.
-                </p>
-            </div>
+          {/* Right Text Content */}
+          <div className="md:col-span-2 text-lg text-gray-700 space-y-4">
+            <p>
+              Dinas Pendidikan Kota Palu berdiri sejak awal terbentuknya pemerintahan kota sebagai upaya untuk mengelola dan mengembangkan sektor pendidikan secara mandiri. Pada awalnya, Dinas Pendidikan hanya memiliki beberapa staf dan ruang kerja terbatas di lingkungan kantor wali kota.
+            </p>
+            <p>
+              Seiring berjalannya waktu, kebutuhan akan pengelolaan pendidikan yang lebih kompleks mendorong pembentukan struktur organisasi yang lebih lengkap dan profesional. Dinas ini mulai mengembangkan program-program pendidikan dasar dan menengah serta meningkatkan kualitas guru melalui berbagai pelatihan.
+            </p>
+            <p>
+              Di awal tahun 2000-an, Dinas Pendidikan mulai memanfaatkan teknologi informasi untuk mendukung administrasi dan pengawasan sekolah-sekolah di bawah naungannya. Beberapa inisiatif seperti e-learning dan manajemen data sekolah mulai diterapkan.
+            </p>
+            <p>
+              Hingga kini, Dinas Pendidikan Kota Palu terus bertransformasi dengan visi meningkatkan kualitas pendidikan yang inklusif, adil, dan berdaya saing. Berbagai penghargaan dan pencapaian telah diraih, termasuk dalam hal inovasi pembelajaran, peningkatan mutu pendidikan, serta keberhasilan program pendidikan karakter di sekolah.
+            </p>
+          </div>
             </div>
         </div>
         </div>
