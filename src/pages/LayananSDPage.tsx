@@ -1,36 +1,49 @@
 import React from 'react';
 
-const SdPage = () => {
+const SdPage: React.FC = () => {
+  const services = [
+    {
+      title: 'Pendaftaran Peserta Didik Baru',
+      description: 'Informasi mengenai pendaftaran siswa baru untuk tahun ajaran.',
+    },
+    {
+      title: 'Kurikulum dan Pembelajaran',
+      description: 'Detail tentang kurikulum yang diterapkan di sekolah.',
+    },
+    {
+      title: 'Bantuan Operasional Sekolah (BOS)',
+      description: 'Informasi mengenai bantuan dana untuk operasional sekolah.',
+    },
+    {
+      title: 'Pengembangan Guru dan Tenaga Pendidikan',
+      description: 'Program pelatihan dan pengembangan untuk guru dan tenaga pendidikan.',
+    },
+    {
+      title: 'Sarana dan Prasarana',
+      description: 'Informasi mengenai fasilitas dan infrastruktur sekolah.',
+    },
+    {
+      title: 'Ekstra Kulikuler dan Pengembangan Bakat',
+      description: 'Kegiatan ekstra kurikuler yang mendukung pengembangan bakat siswa.',
+    },
+  ];
+
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Layanan SD</h1>
-        
-        <div className="bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4">Informasi SD</h2>
-          <p className="text-gray-600 mb-6">
-            Layanan ini menyediakan informasi terkait Sekolah Dasar (SD) di lingkungan Dinas Pendidikan Kota Palu.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Program SD</h3>
-              <p className="text-gray-600">
-                Informasi tentang program dan kegiatan Sekolah Dasar yang sedang berjalan.
-              </p>
+        <h1 className="text-4xl font-bold text-center mb-8">Layanan SD</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+              <h2 className="text-xl font-bold mb-2">{service.title}</h2>
+              <p className="text-gray-600">{service.description}</p>
             </div>
-            
-            <div className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Pengembangan Kurikulum</h3>
-              <p className="text-gray-600">
-                Informasi mengenai pengembangan kurikulum dan metode pembelajaran di Sekolah Dasar.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
 
 export default SdPage;
