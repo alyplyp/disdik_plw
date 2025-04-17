@@ -24,6 +24,8 @@ import SdPage from "./pages/LayananSDPage.tsx";
 import SmpPage from "./pages/LayananSMPPage.tsx";
 import SubSekretariatPage from "./pages/LayananSubSekretariatPage.tsx";
 import AsetKeuanganPage from "./pages/LayananAsetKeuanganPage.tsx";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 function App() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
