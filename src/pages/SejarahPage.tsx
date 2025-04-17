@@ -30,18 +30,13 @@ function SejarahPage() {
           {/* Left Images */}
           <div className="md:col-span-1 space-y-4">
             <img
-              src="public\images\DSC01569-min.JPG"
+              src="public\images\dinaspendidikan.jpg"
               alt="Gedung lama Dinas Pendidikan"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-            <img
-              src="public\images\DSC01569-min.JPG"
-              alt="Kegiatan awal Dinas Pendidikan"
               className="w-full h-auto rounded-lg shadow-lg"
             />
             {/* Gambar tambahan untuk mengisi bagian kosong */}
             <img
-              src="/images/sejarah-3.jpg"
+              src="/images/map.png"
               alt="Dokumen atau arsip sejarah Dinas Pendidikan"
               className="w-full h-auto rounded-lg shadow-lg"
             />

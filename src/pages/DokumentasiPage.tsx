@@ -16,8 +16,8 @@ const DokumentasiPage: React.FC = () => {
       <div className="relative h-[300px] bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Judul Halaman</h1>
-          <p className="text-xl">Subjudul atau deskripsi singkat halaman ini</p>
+          <h1 className="text-4xl font-bold mb-4">Dokumentasi</h1>
+          <p className="text-xl">Dokumentasi kegiatan Dinas Pendidikan</p>
         </div>
       </div>
 
@@ -27,7 +27,6 @@ const DokumentasiPage: React.FC = () => {
           <div className="flex justify-center">
             <blockquote
               className="instagram-media"
-              data-instgrm-captioned
               data-instgrm-permalink="https://www.instagram.com/reel/DIKqTA2yhRo/?utm_source=ig_embed&amp;utm_campaign=loading"
               data-instgrm-version="14"
               style={{

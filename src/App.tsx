@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import KalenderPage from "./pages/KalenderPage";
 import DokumentasiPage from "./pages/DokumentasiPage";
 import {
-  Search,
   School,
   BookOpen,
   Users,
   Building2,
-  GraduationCap,
   Facebook,
   Instagram,
   X,
@@ -163,19 +161,12 @@ function App() {
                 <h1 className="text-5xl font-bold mb-4">
                   Dinas Pendidikan Kota Palu
                 </h1>
-                <p className="text-xl mb-8">
-                  Membangun Generasi Cerdas, Kreatif, dan Berakhlak Mulia
+                <p className="text-2xl mb-4">
+                  PaluKanaMapande
                 </p>
-                <div className="w-full max-w-2xl flex">
-                  <input
-                    type="text"
-                    placeholder="Cari informasi..."
-                    className="w-full px-6 py-3 rounded-l-lg text-gray-900"
-                  />
-                  <button className="bg-yellow-500 px-6 py-3 rounded-r-lg hover:bg-yellow-600 transition">
-                    <Search className="w-6 h-6" />
-                  </button>
-                </div>
+                <p className="text-xl mb-4">
+                  #BekerjaDenganHati
+                </p>
               </div>
             </div>
 
@@ -209,7 +200,7 @@ function App() {
                 <div className="flex gap-6 overflow-x-auto pb-4">
                   {Object.entries(
                     import.meta.glob(
-                      "/public/carousel/*.{jpg,jpeg,png,JPG,JPEG,PNG}",
+                      "/public/carousel/*.{jpg,jpeg,png,JPG,JPEG,PNG.,webp,WEBP}",
                       { eager: true, as: "url" }
                     )
                   )
